@@ -21,7 +21,7 @@ public class AccountTest {
     public void CheckIfTransferMoneyChangeBalance() {
         from.TransferMoney(new BigDecimal(454.41), to);
 
-        Assert.assertEquals(from.getBalance(), new BigDecimal(4512.31).min(new BigDecimal(454.41)));
+        Assert.assertEquals(from.getBalance(), new BigDecimal(4512.31).subtract(new BigDecimal(454.41)));
         Assert.assertEquals(to.getBalance(), new BigDecimal(4512.31).add(new BigDecimal(454.41)));
     }
 
